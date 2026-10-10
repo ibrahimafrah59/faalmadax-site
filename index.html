@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Faal Madax Primary and Secondary School teaches orphaned children in Mogadishu, Somalia. Support a student, give monthly or yearly, or help fund our school bus and new school land.">
+<meta property="og:title" content="Faal Madax Primary and Secondary School">
+<meta property="og:description" content="A school for orphans in Mogadishu, Somalia. Help a child learn.">
+<meta property="og:image" content="media/classroom.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%231f6fd1'/%3E%3Cpath fill='%23fff' d='M12 4.5l2 4.8 5.2.4-4 3.4 1.2 5.1L12 15.5l-4.4 2.7 1.2-5.1-4-3.4 5.2-.4z'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background:#fff}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Faal Madax School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: single column school site — hero with mission, subjects grid, why-it-matters band, donate panel, contact. Clean white/black base; Somali-flag blue for buttons and links, yellow for highlights. */
+:root{
+  --bg:#ffffff; --surface:#ffffff; --ink:#111111; --muted:#555555;
+  --sky:#1f6fd1; --on-sky:#ffffff; --sky-soft:#f3f4f6; --line:#e5e5e5;
+  --sand:#ffcc00; --on-sand:#111111;
+  --panel:#111111; --panel-ink:#ffffff;
+  --display:"Young Serif", Georgia, "Times New Roman", serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+/* Always light: black text on white, no dark mode. */
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.6;padding-inline:16px}
+.wrap{max-width:980px;margin:0 auto}
+a{color:var(--sky)}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.01em}
+.star{width:34px;height:34px;border-radius:50%;background:var(--sky);display:grid;place-items:center}
+.star svg{width:20px;height:20px}
+nav{display:flex;gap:4px;flex-wrap:wrap;font-weight:600;background:var(--sky);padding:6px;border-radius:12px}
+nav a{color:var(--on-sky);text-decoration:none;padding:8px 14px;border-radius:8px}
+nav a:hover,nav a:focus-visible{background:var(--sand);color:var(--on-sand)}
+.btn{display:inline-block;background:var(--sky);color:var(--on-sky);font-weight:600;padding:12px 22px;border-radius:999px;text-decoration:none;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--sand);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.eyebrow{justify-self:start;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;background:var(--sand);color:var(--on-sand);font-weight:700;padding:3px 10px;border-radius:4px}
+h1,h2{font-family:var(--display);font-weight:400;text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,6vw,3.6rem)}
+h2{font-size:clamp(1.6rem,4vw,2.3rem)}
+h3{margin:0;font-size:1.1rem}
+p{margin:0;max-width:62ch}
+section{padding-block:56px;border-top:1px solid var(--line);display:grid;gap:22px}
+.hero{padding-block:40px 56px;border-top:0;display:grid;gap:26px;grid-template-columns:1.3fr 1fr;align-items:center}
+.hero-text{display:grid;gap:18px;min-width:0}
+.hero .lead{font-size:1.2rem;color:var(--muted)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:var(--sky-soft);border-top:4px solid var(--sky);border-radius:20px;padding:28px;display:grid;gap:14px}
+.hero-card .loc{font-family:var(--display);font-size:1.5rem}
+.hero-card dl{margin:0;display:grid;gap:10px}
+.hero-card dt{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.hero-card dd{margin:0;font-weight:600}
+.subjects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.subject{background:var(--surface);border:2px solid var(--sky);border-radius:14px;padding:20px;display:grid;gap:6px}
+.subject .so{color:var(--muted);font-size:.9rem}
+.levels{display:flex;gap:10px;flex-wrap:wrap}
+.pill{background:var(--sky-soft);color:var(--ink);padding:6px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+.staff{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.person{display:flex;gap:16px;align-items:center;border:2px solid var(--sky);border-radius:14px;padding:16px;min-width:0}
+.photo{flex:0 0 110px;width:110px;height:110px;max-width:110px;border-radius:50%;background:var(--sky-soft);border:3px solid var(--sand);display:grid;place-items:center;font-family:var(--display);font-size:1.6rem;color:var(--sky);object-fit:cover}
+.person div{display:grid;gap:2px;min-width:0}
+.person .role{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.board li{border:2px solid var(--sky);border-radius:12px;padding:12px 16px;font-weight:600;display:flex;align-items:center;gap:10px}
+.board li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sand);flex:0 0 8px}
+.subhead{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin:0}
+@media (max-width:760px){.staff{grid-template-columns:1fr}}
+.team-intro{display:grid;gap:14px;padding-block:40px 24px}
+.team-intro .lead{font-size:1.2rem;color:var(--muted)}
+nav a[aria-current="page"]{background:var(--sand);color:var(--on-sand)}
+.subject-play{font:inherit;color:inherit;text-align:left;cursor:pointer;justify-items:start}
+.subject-play:hover{background:var(--sky-soft)}
+.subject-play:focus-visible{outline:3px solid var(--sand);outline-offset:3px}
+.watch{display:inline-flex;align-items:center;gap:6px;margin-top:4px;background:var(--sky);color:var(--on-sky);font-size:.8rem;font-weight:700;padding:3px 10px 3px 8px;border-radius:999px}
+.watch svg{width:10px;height:10px}
+.feature{position:relative}
+.close-video{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:2px solid var(--sky);background:var(--sand);color:var(--on-sand);font:inherit;font-size:1.6rem;line-height:1;font-weight:700;cursor:pointer;display:grid;place-items:center;z-index:2}
+.close-video:hover{background:var(--sky);color:var(--on-sky)}
+.close-video:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.basmala{margin:0 auto;max-width:none;text-align:center;padding-block:6px 0;font-family:"Amiri","Noto Naskh Arabic","Traditional Arabic",serif;font-size:clamp(2.2rem,7vw,3.2rem);line-height:1.3;color:var(--ink)}
+.muted-note{color:var(--muted);font-style:italic}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.stats div{border:2px solid var(--sky);border-radius:14px;padding:16px;display:grid;gap:4px}
+.stat-num{font-family:var(--display);font-size:clamp(1.5rem,4vw,2.1rem);font-variant-numeric:tabular-nums}
+.stat-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.bars{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.bars li{display:grid;grid-template-columns:9.5rem minmax(0,1fr) 6.5rem;gap:12px;align-items:center}
+.bar-label{font-weight:600;font-size:.95rem}
+.bar-track{height:14px;background:var(--sky-soft);border-radius:999px;overflow:hidden}
+.bar{display:block;height:100%;background:var(--sky);border-radius:999px}
+.bar-val{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.donor-groups{display:grid;gap:10px}
+.group{border:2px solid var(--sky);border-radius:14px;overflow:hidden}
+.group summary{cursor:pointer;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;list-style:none}
+.group summary::-webkit-details-marker{display:none}
+.group summary::before{content:"+";font-weight:700;color:var(--on-sand);background:var(--sand);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;flex:0 0 24px}
+.group[open] summary::before{content:"\2212"}
+.group summary:focus-visible{outline:3px solid var(--sand);outline-offset:-3px}
+.g-name{display:grid;font-weight:700;flex:1;min-width:0}
+.g-name .so{font-weight:400;font-size:.85rem;color:var(--muted)}
+.g-meta{font-variant-numeric:tabular-nums;color:var(--muted)}
+.g-meta strong{color:var(--ink)}
+.tbl{overflow-x:auto;border-top:1px solid var(--line)}
+.tbl table{width:100%;border-collapse:collapse;font-size:.95rem}
+.tbl th{text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:10px 18px;background:var(--sky-soft)}
+.tbl td{padding:9px 18px;border-top:1px solid var(--line);vertical-align:top}
+.tbl .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl .idx{color:var(--muted);width:3rem;font-variant-numeric:tabular-nums}
+.tbl .note{display:block;font-size:.82rem;color:var(--muted)}
+@media (max-width:760px){.stats{grid-template-columns:1fr}.bars li{grid-template-columns:6.5rem minmax(0,1fr) 5.5rem;gap:8px}.bar-label{font-size:.85rem}.tbl th,.tbl td{padding-inline:12px}}
+.report-list{display:grid;gap:12px}
+.report-card{display:flex;align-items:center;gap:16px;flex-wrap:wrap;border:2px solid var(--sky);border-radius:14px;padding:18px}
+.report-icon{flex:0 0 56px;height:68px;border-radius:6px;background:var(--sand);color:var(--on-sand);display:grid;place-items:center;font-weight:800;font-size:.85rem;letter-spacing:.05em}
+.report-text{display:grid;gap:2px;flex:1 1 220px;min-width:0}
+.report-text span{color:var(--muted);font-size:.9rem}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.project{border:2px solid var(--sky);border-radius:16px;padding:22px;display:grid;gap:12px;align-content:start}
+.project .btn{justify-self:start}
+.p-tag{justify-self:start;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--sky)}
+.p-desc{color:var(--muted)}
+.p-bar{height:16px;background:var(--sky-soft);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.p-bar span{display:block;height:100%;background:var(--sky);border-radius:999px}
+.p-figs{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.p-figs div{display:grid;gap:2px}
+.p-figs dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.p-figs dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.p-figs .need dd{background:var(--sand);color:var(--on-sand);justify-self:start;padding:0 6px;border-radius:4px}
+.p-pct{color:var(--muted)}
+.p-pct strong{color:var(--ink)}
+@media (max-width:760px){.projects{grid-template-columns:1fr}}
+.member-strip{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid color-mix(in srgb,var(--panel-ink) 25%,transparent);padding-top:18px}
+.member-strip p{flex:1 1 260px;min-width:0}
+.donate .member-strip .btn{background:var(--sand);color:var(--on-sand)}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:560px}
+.plan{border:2px solid var(--sky);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
+.plan-name{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.plan-price{font-family:var(--display);font-size:1.9rem;font-variant-numeric:tabular-nums}
+.plan-price small{font-family:var(--body);font-size:.9rem;color:var(--muted);margin-left:4px}
+.plan-btn{justify-self:start}
+.hero-card{overflow:hidden}
+.hero-img{width:calc(100% + 56px);max-width:none;margin:-28px -28px 4px;aspect-ratio:4/3;height:auto;object-fit:cover;display:block}
+.feature{margin:0;display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;align-items:center;border:2px solid var(--sky);border-radius:16px;padding:16px}
+.feature video{width:100%;max-width:100%;aspect-ratio:368/640;height:auto;border-radius:10px;background:#000;display:block}
+.feature figcaption{display:grid;gap:8px}
+.feature p{color:var(--muted)}
+.wide{width:100%;max-width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:16px;display:block;height:auto}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gallery figure{margin:0;display:grid;gap:8px;align-content:start;min-width:0}
+.gallery figure:first-child{grid-column:1/-1}
+.gallery figure:first-child img{aspect-ratio:16/7}
+.gallery img,.gallery video{width:100%;max-width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:12px;border:2px solid var(--sky);display:block;background:#000}
+.gallery figcaption{font-size:.9rem;color:var(--muted)}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.feature{grid-template-columns:1fr}.feature video{max-width:300px}}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.why div{display:grid;gap:6px;min-width:0}
+.why p{color:var(--muted)}
+.donate{background:var(--panel);color:var(--panel-ink);border:1px solid var(--line);border-radius:22px;padding:36px 28px;margin-block:56px;display:grid;gap:18px;border-top:0}
+.donate p{color:color-mix(in srgb,var(--panel-ink) 80%,transparent)}
+.amounts{display:flex;gap:10px;flex-wrap:wrap}
+.amt{background:transparent;color:var(--panel-ink);border:1.5px solid color-mix(in srgb,var(--panel-ink) 40%,transparent);padding:10px 18px;border-radius:999px;font:inherit;font-weight:600;cursor:pointer;font-variant-numeric:tabular-nums}
+.amt[aria-pressed="true"]{background:var(--sand);border-color:var(--sand);color:var(--on-sand)}
+.donate .btn{background:var(--sky);color:var(--on-sky);justify-self:start}
+.note{font-size:.9rem}
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.contact div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:4px}
+.contact span{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+footer{padding-block:28px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr}
+  .subjects{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why,.contact{grid-template-columns:1fr}
+  nav{width:100%;justify-content:space-between}
+  nav a{padding:8px 10px}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.amt{transition:transform .15s}.btn:hover,.amt:hover{transform:translateY(-1px)}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7.1L12 17.5 5.8 21.3l1.6-7.1L2 9.5l7.1-.6z"/></svg></span>
+      Faal Madax School
+    </div>
+    <nav aria-label="Main">
+      <a href="#about">Home</a>
+      <a href="#programs">Programs</a>
+      <a href="#team">Our Team</a>
+      <a href="#support">Support Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <p class="basmala" lang="ar" dir="rtl" aria-label="Bismillah ir-Rahman ir-Rahim">﷽</p>
+
+  <main id="home-page">
+  <div class="hero" id="about">
+    <div class="hero-text">
+      <span class="eyebrow">Ku soo dhawoow · Welcome</span>
+      <h1>A school for orphans in Mogadishu</h1>
+      <p class="lead">Faal Madax Primary and Secondary School teaches children who have lost their parents. Without your support, these children would not be learning.</p>
+      <div class="cta">
+        <a class="btn" href="#donate">Support a student</a>
+        <a class="btn ghost" href="#programs">See our programs</a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="School facts">
+      <img class="hero-img" src="media/classroom.jpg" alt="Students reading a Somali-language textbook together in a Faal Madax classroom" width="1080" height="810">
+      <div class="loc">Mogadishu, Somalia</div>
+      <dl>
+        <div><dt>Levels</dt><dd>Primary and Secondary</dd></div>
+        <div><dt>Who we serve</dt><dd>Orphaned children in need</dd></div>
+        <div><dt>Students registered</dt><dd>Number to be added</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <section id="programs">
+    <span class="eyebrow">Barnaamijyada · Programs &amp; Classes</span>
+    <h2>Six subjects, from first lessons to secondary school</h2>
+    <div class="levels"><span class="pill">Primary</span><span class="pill">Secondary</span></div>
+    <div class="subjects">
+      <div class="subject"><h3>General Math</h3><span class="so">Xisaab</span></div>
+      <div class="subject"><h3>English</h3><span class="so">Ingiriisi</span></div>
+      <button type="button" class="subject subject-play" id="quran-card" aria-controls="quran-video"><h3>Quran</h3><span class="so">Qur'aan</span><span class="watch"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg>Tap to watch</span></button>
+      <div class="subject"><h3>Somali</h3><span class="so">Af-Soomaali</span></div>
+      <div class="subject"><h3>Arabic</h3><span class="so">Carabi</span></div>
+      <div class="subject"><h3>Technology</h3><span class="so">Tiknoolajiyad</span></div>
+    </div>
+    <figure class="feature" id="quran-feature" hidden>
+      <button type="button" class="close-video" id="quran-close" aria-label="Close video">&times;</button>
+      <video id="quran-video" src="media/quran.mp4" poster="media/quran-poster.jpg" controls playsinline preload="none" width="368" height="640"></video>
+      <figcaption><h3>Inside a Quran class</h3><p>Students at their desks during a Quran lesson at Faal Madax.</p></figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <span class="eyebrow">Why it matters</span>
+    <h2>Your gift keeps a child in the classroom</h2>
+    <img class="wide" src="media/students-yellow.jpg" alt="Faal Madax students in yellow school shirts seated on benches" width="1400" height="788">
+    <div class="why">
+      <div><h3>Free schooling</h3><p>Orphaned children study here without paying fees their families cannot cover.</p></div>
+      <div><h3>Faith and language</h3><p>Students learn Quran, Somali and Arabic alongside math, English and technology.</p></div>
+      <div><h3>A path forward</h3><p>Primary through secondary means a child can finish school in one place.</p></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <span class="eyebrow">Nolosha dugsiga · School life</span>
+    <h2>A day at Faal Madax</h2>
+    <div class="gallery">
+      <figure><img src="media/assembly.jpg" alt="Students gathered in the school hall" loading="lazy" width="1400" height="788"><figcaption>Students gathered in the school hall</figcaption></figure>
+      <figure><img src="media/bus.jpg" alt="Students in yellow uniforms riding to school" loading="lazy" width="765" height="1020"><figcaption>On the way to school</figcaption></figure>
+      <figure><img src="media/girls-blue.jpg" alt="Girls in blue school uniforms lined up outside" loading="lazy" width="432" height="984"><figcaption>Girls lining up for class</figcaption></figure>
+      <figure><img src="media/boys-white.jpg" alt="Boys in white shirts and blue trousers lined up outside" loading="lazy" width="432" height="984"><figcaption>Boys lining up for class</figcaption></figure>
+      <figure><video src="media/school.mp4" poster="media/school-poster.jpg" controls playsinline preload="none" width="368" height="640"></video><figcaption>A message from one of our students</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="donate" id="donate">
+    <span class="eyebrow">Tabaruc · Donate</span>
+    <h2>Help a child learn</h2>
+    <p>Choose an amount. Donations go directly to running the school: teachers, books and classrooms.</p>
+    <div class="amounts" role="group" aria-label="Donation amount">
+      <button class="amt" id="amt-25" aria-pressed="false">$25</button>
+      <button class="amt" id="amt-50" aria-pressed="true">$50</button>
+      <button class="amt" id="amt-100" aria-pressed="false">$100</button>
+      <button class="amt" id="amt-250" aria-pressed="false">$250</button>
+    </div>
+    <a class="btn" id="donate-btn" href="#donate">Donate $50</a>
+    <p class="note">Secure payment link (Stripe or PayPal) will be connected here.</p>
+    <div class="member-strip">
+      <p><strong>Give every month or every year.</strong> Become a Faal Madax member for $19.17 a month or $230 a year.</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeWWEZg1e4sEHOx6AE10hozEX2UJmlEmDjdofZF-yfA4HUvYg/viewform?usp=header" target="_blank" rel="noopener">Become a member</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <span class="eyebrow">Nala soo xiriir · Contact us</span>
+    <h2>Get in touch</h2>
+    <div class="contact">
+      <div><span>Location</span><strong>Mogadishu, Somalia</strong></div>
+      <div><span>Website</span><strong>www.faalmadax.com</strong></div>
+    </div>
+  </section>
+  </main>
+
+  <main id="team-page" hidden>
+  <div class="team-intro">
+    <span class="eyebrow">Kooxdeena · Our team</span>
+    <h1>The people behind Faal Madax</h1>
+    <p class="lead">Our school leaders run the classrooms in Mogadishu, and our board supports the school from around the world.</p>
+  </div>
+  <section id="leadership">
+    <span class="eyebrow">Maamulka · School leadership</span>
+    <h2>Meet our principals</h2>
+    <div class="staff">
+      <div class="person">
+        <img class="photo" src="media/abdirahim.jpg" alt="Abdirahim Mahamad Mahmud, Principal" width="400" height="400">
+        <div><span class="role">Principal · Maamulaha</span><h3>Abdirahim Mahamad Mahmud</h3></div>
+      </div>
+      <div class="person">
+        <img class="photo" src="media/hawo.jpg" alt="Hawo Mahmed Gedi, Vice Principal" width="400" height="400">
+        <div><span class="role">Vice Principal · Ku-xigeenka</span><h3>Hawo Mahmed Gedi</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="board">
+    <span class="eyebrow">Guddiga · Board</span>
+    <h2>Our board, from around the world</h2>
+    <p>Our board members live all over the world and support the school from wherever they are.</p>
+    <h3 class="subhead">Board members</h3>
+    <ul class="board">
+      <li>Aamino Mohamed Alasow</li>
+      <li>Safiyo Mahamed Hassan</li>
+      <li>Hassan Mahamed Ente</li>
+      <li>Ismail Hussien Afrah</li>
+      <li>Deeqo Ahmed Sildhiqey</li>
+      <li>Sahro Ismail Ali</li>
+      <li>Nasro Hussein Afrah</li>
+    </ul>
+    <h3 class="subhead">School treasurers · Lacag-hayeyaasha</h3>
+    <ul class="board">
+      <li>Ahmed Abdi Jahweyn</li>
+      <li>Abdulahi Hasan Heyle</li>
+    </ul>
+  </section>
+  </main>
+
+  <main id="support-page" hidden>
+  <div class="team-intro">
+    <span class="eyebrow">Na taageer · Support us</span>
+    <h1>Support Faal Madax</h1>
+    <p class="lead">Every gift helps orphaned children in Mogadishu stay in school. Thank you to everyone who stands with our students.</p>
+    <div class="cta"><a class="btn" href="#donate">Donate now</a></div>
+  </div>
+
+  <section id="membership">
+    <span class="eyebrow">Xubinnimo · Membership</span>
+    <h2>Give monthly or yearly</h2>
+    <p>Members cover the school's yearly costs: teachers, books and classrooms. Fill in the donor form, choose how you want to pay, then continue to the payment page.</p>
+    <div class="plans">
+      <div class="plan"><span class="plan-name">Monthly</span><span class="plan-price">$19.17<small>/ month</small></span></div>
+      <div class="plan"><span class="plan-name">Yearly</span><span class="plan-price">$230<small>/ year</small></span></div>
+    </div>
+    <p class="muted-note">You can also add an extra gift for Eid al-Fitr and Eid al-Adha on the form.</p>
+    <a class="btn plan-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeWWEZg1e4sEHOx6AE10hozEX2UJmlEmDjdofZF-yfA4HUvYg/viewform?usp=header" target="_blank" rel="noopener">Open the donor form</a>
+  </section>
+
+  <section id="projects">
+    <span class="eyebrow">Mashaariicda · Our projects</span>
+    <h2>Support our projects</h2>
+    <p>Two projects will help Faal Madax reach more children. Give to the one closest to your heart.</p>
+    <div class="projects">
+      <article class="project">
+        <span class="p-tag">Project 1</span>
+        <h3>A new school bus</h3>
+        <p class="p-desc">A safe ride to and from school for our students.</p>
+        <div class="p-bar" role="progressbar" aria-label="School bus funding" aria-valuemin="0" aria-valuemax="20000" aria-valuenow="16975.22" aria-valuetext="$16,975.22 of $20,000 raised"><span style="width:84.9%"></span></div>
+        <dl class="p-figs">
+          <div><dt>Raised</dt><dd>$16,975.22</dd></div>
+          <div><dt>Goal</dt><dd>$20,000</dd></div>
+          <div class="need"><dt>Still needed</dt><dd>$3,024.78</dd></div>
+        </dl>
+        <p class="p-pct"><strong>85%</strong> funded</p>
+        <a class="btn" href="https://square.link/u/jZdMjMvp" target="_blank" rel="noopener">Donate to the bus</a>
+      </article>
+      <article class="project">
+        <span class="p-tag">Project 2</span>
+        <h3>Land for a new school building</h3>
+        <p class="p-desc">Land where we can build a new, larger school for our students.</p>
+        <div class="p-bar" role="progressbar" aria-label="Land funding" aria-valuemin="0" aria-valuemax="110000" aria-valuenow="0" aria-valuetext="$0 of $110,000 raised"><span style="width:0%"></span></div>
+        <dl class="p-figs">
+          <div><dt>Raised</dt><dd>$0</dd></div>
+          <div><dt>Goal</dt><dd>$110,000</dd></div>
+          <div class="need"><dt>Still needed</dt><dd>$110,000</dd></div>
+        </dl>
+        <p class="p-pct">Fundraising starts now. Be the first to give and help this project begin.</p>
+        <a class="btn" href="https://square.link/u/vWttDnBp" target="_blank" rel="noopener">Donate to the land</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="report-2023">
+    <span class="eyebrow">Mahadsanid · Thank you</span>
+    <h2>Thank you to our supporters</h2>
+    <p>Supporters in the United States, Canada, the United Kingdom, Europe, Africa and beyond give every year to keep our students learning. Each yearly report lists every gift by country.</p>
+    <div class="report-list">
+      <div class="report-card">
+        <div class="report-icon" aria-hidden="true">PDF</div>
+        <div class="report-text"><strong>Faal Madax 2024 Supporters Report</strong><span>9 pages · $48,376.97 from 15 countries, country totals and every supporter</span></div>
+        <a class="btn report-dl" download href="media/faalmadax-2024-supporters-report.pdf" data-name="Faal-Madax-2024-Supporters-Report.pdf" target="_blank" rel="noopener">Download the 2024 report (PDF)</a>
+      </div>
+      <div class="report-card">
+        <div class="report-icon" aria-hidden="true">PDF</div>
+        <div class="report-text"><strong>Faal Madax 2023 Supporters Report</strong><span>8 pages · every supporter, country totals and Eid gifts</span></div>
+        <a class="btn report-dl" download href="media/faalmadax-2023-supporters-report.pdf" data-name="Faal-Madax-2023-Supporters-Report.pdf" target="_blank" rel="noopener">Download the 2023 report (PDF)</a>
+      </div>
+    </div>
+    <p class="muted-note" id="report-msg" role="status"></p>
+  </section>
+  </main>
+
+
+  <footer>© 2026 Faal Madax Primary and Secondary School · For orphans in Mogadishu</footer>
+</div>
+
+<script>
+const btns=document.querySelectorAll('.amt'),go=document.getElementById('donate-btn');
+btns.forEach(b=>b.addEventListener('click',()=>{btns.forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');go.textContent='Donate '+b.textContent;}));
+const home=document.getElementById('home-page'),team=document.getElementById('team-page'),support=document.getElementById('support-page'),teamLink=document.querySelector('nav a[href="#team"]'),supLink=document.querySelector('nav a[href="#support"]');
+function route(){
+  const h=location.hash.slice(1);
+  const onTeam=h==='team'||h==='leadership'||h==='board';
+  const onSup=h==='support'||h==='report-2023'||h==='projects'||h==='membership';
+  home.hidden=onTeam||onSup; team.hidden=!onTeam; support.hidden=!onSup;
+  [[teamLink,onTeam],[supLink,onSup]].forEach(([a,on])=>on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+  const t=h&&h!=='team'&&h!=='support'?document.getElementById(h):null;
+  if(t&&!t.closest('[hidden]'))t.scrollIntoView();else window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);route();
+const qv=document.getElementById('quran-video'),qf=document.getElementById('quran-feature'),qc=document.getElementById('quran-card');
+qc.setAttribute('aria-expanded','false');
+document.getElementById('quran-close').addEventListener('click',()=>{
+  qv.pause(); qv.currentTime=0; qf.hidden=true; qc.setAttribute('aria-expanded','false'); qc.focus();
+});
+qc.addEventListener('click',()=>{
+  qf.hidden=false; qc.setAttribute('aria-expanded','true');
+  const smooth=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  qv.scrollIntoView({behavior:smooth?'smooth':'auto',block:'center'});
+  const p=qv.play(); if(p&&p.catch)p.catch(()=>{qv.muted=true;qv.play().catch(()=>{});});
+});
+(async()=>{
+  const msg=document.getElementById('report-msg');
+  const dl=window.claude?await window.claude.use('downloads').catch(()=>null):null;
+  if(!dl)return;
+  document.querySelectorAll('.report-dl').forEach(btn=>btn.addEventListener('click',async e=>{
+    e.preventDefault(); msg.textContent='';
+    try{
+      const r=await fetch(btn.getAttribute('href')); if(!r.ok)throw new Error();
+      await dl.save({filename:btn.dataset.name,data:await r.blob()});
+    }catch(err){
+      if(err&&err.code==='declined')return;
+      msg.textContent=err&&err.code==='rate_limited'?'A download is already waiting for you to confirm.':'The report could not be downloaded here. Please try again in a moment.';
+    }
+  }));
+})();
+</script>
+
+</body>
+</html>
