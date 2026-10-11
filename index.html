@@ -179,6 +179,16 @@ footer{padding-block:28px;color:var(--muted);font-size:.9rem;border-top:1px soli
   nav a{padding:8px 10px}
 }
 @media (prefers-reduced-motion:no-preference){.btn,.amt{transition:transform .15s}.btn:hover,.amt:hover{transform:translateY(-1px)}}
+/* Sticky menu: the blue bar stays at the top while the page scrolls (the Bismillah scrolls away). */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);padding-block:12px}
+header.top nav{box-shadow:0 6px 16px rgba(17,17,17,.10)}
+html{scroll-padding-top:100px}
+@media (max-width:760px){
+  header.top{display:contents}
+  header.top .brand{padding-block:16px 4px}
+  header.top nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;margin-block:8px}
+  html{scroll-padding-top:130px}
+}
 </style>
 
 <div class="wrap">
