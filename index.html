@@ -189,6 +189,24 @@ html{scroll-padding-top:100px}
   header.top nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;margin-block:8px}
   html{scroll-padding-top:130px}
 }
+.contact-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:20px;align-items:start}
+.contact-layout .contact{grid-template-columns:1fr}
+.selectable{user-select:all;word-break:break-all}
+.contact-form{border:2px solid var(--sky);border-radius:16px;padding:22px;display:grid;gap:14px;min-width:0}
+.contact-form h3{font-size:1.15rem}
+.field-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.field{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+.field em{font-weight:400;color:var(--muted);font-style:normal}
+.field input,.field textarea{font:inherit;font-weight:400;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;box-sizing:border-box}
+.field textarea{resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 3px color-mix(in srgb,var(--sky) 25%,transparent)}
+.contact-form .btn{justify-self:start}
+.contact-form .btn[disabled]{opacity:.6;cursor:wait}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cf-status{margin:0;font-weight:600}
+.cf-status.ok{color:#1b7f3b}
+.cf-status.err{color:#b42318}
+@media (max-width:760px){.contact-layout,.field-row{grid-template-columns:1fr}}
 </style>
 
 <div class="wrap">
@@ -292,9 +310,25 @@ html{scroll-padding-top:100px}
   <section id="contact">
     <span class="eyebrow">Nala soo xiriir · Contact us</span>
     <h2>Get in touch</h2>
-    <div class="contact">
-      <div><span>Location</span><strong>Mogadishu, Somalia</strong></div>
-      <div><span>Website</span><strong>www.faalmadax.com</strong></div>
+    <div class="contact-layout">
+      <div class="contact">
+        <div><span>Email</span><strong class="selectable">faalmadaxprimary@gmail.com</strong></div>
+        <div><span>Location</span><strong>Mogadishu, Somalia</strong></div>
+        <div><span>Website</span><strong>www.faalmadax.com</strong></div>
+      </div>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/maeqjllv" method="POST">
+        <h3>Send us a message</h3>
+        <div class="field-row">
+          <label class="field" for="cf-name">Your name<input id="cf-name" name="name" type="text" autocomplete="name" required></label>
+          <label class="field" for="cf-email">Your email<input id="cf-email" name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label class="field" for="cf-phone"><span>Phone or WhatsApp <em>(optional)</em></span><input id="cf-phone" name="phone" type="tel" autocomplete="tel"></label>
+        <label class="field" for="cf-message">Message<textarea id="cf-message" name="message" rows="5" required></textarea></label>
+        <input type="hidden" name="_subject" value="New message from faalmadax.com">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit" id="cf-send">Send message</button>
+        <p class="cf-status" id="cf-status" role="status"></p>
+      </form>
     </div>
   </section>
   </main>
@@ -459,6 +493,20 @@ qc.addEventListener('click',()=>{
       msg.textContent=err&&err.code==='rate_limited'?'A download is already waiting for you to confirm.':'The report could not be downloaded here. Please try again in a moment.';
     }
   }));
+})();
+(()=>{
+  const f=document.getElementById('contact-form'); if(!f)return;
+  const st=document.getElementById('cf-status'),btn=document.getElementById('cf-send');
+  f.addEventListener('submit',async e=>{
+    e.preventDefault(); st.className='cf-status'; st.textContent='Sending...'; btn.disabled=true;
+    try{
+      const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
+      if(!r.ok)throw new Error();
+      f.reset(); st.classList.add('ok'); st.textContent='Thank you! Your message was sent. We will reply as soon as we can.';
+    }catch(err){
+      st.classList.add('err'); st.textContent='Your message could not be sent. Please check your connection and try again, or email faalmadaxprimary@gmail.com.';
+    }finally{btn.disabled=false;}
+  });
 })();
 </script>
 
