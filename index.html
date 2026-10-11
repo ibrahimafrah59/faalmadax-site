@@ -176,7 +176,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.9rem;border-top:1px soli
   .hero{grid-template-columns:1fr}
   .subjects{grid-template-columns:repeat(2,minmax(0,1fr))}
   .why,.contact{grid-template-columns:1fr}
-  nav{width:100%;justify-content:space-between}
+  nav{width:100%;justify-content:center;gap:4px 2px}
   nav a{padding:8px 10px}
 }
 @media (prefers-reduced-motion:no-preference){.btn,.amt{transition:transform .15s}.btn:hover,.amt:hover{transform:translateY(-1px)}}
@@ -208,6 +208,7 @@ html{scroll-padding-top:100px}
 .cf-status.ok{color:#1b7f3b}
 .cf-status.err{color:#b42318}
 @media (max-width:760px){.contact-layout,.field-row{grid-template-columns:1fr}}
+.count{font-variant-numeric:tabular-nums}
 </style>
 
 <div class="wrap">
@@ -243,7 +244,7 @@ html{scroll-padding-top:100px}
       <dl>
         <div><dt>Levels</dt><dd>Primary and Secondary</dd></div>
         <div><dt>Who we serve</dt><dd>Orphaned children in need</dd></div>
-        <div><dt>Students registered</dt><dd>Number to be added</dd></div>
+        <div><dt>Students registered</dt><dd><span id="student-count" class="count" data-target="70" aria-label="70 students">70</span> students</dd></div>
       </dl>
     </aside>
   </div>
@@ -522,6 +523,20 @@ qc.addEventListener('click',()=>{
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
   window.addEventListener('load',fit);
   let r;window.addEventListener('resize',()=>{cancelAnimationFrame(r);r=requestAnimationFrame(fit);});
+})();
+/* Students registered: count up from 0 to the real number when the page loads. */
+(()=>{
+  const el=document.getElementById('student-count'); if(!el)return;
+  const target=parseInt(el.dataset.target,10)||0;
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const dur=1300,start=performance.now();
+  el.textContent='0';
+  function step(now){
+    const p=Math.min(1,(now-start)/dur), eased=1-Math.pow(1-p,3);
+    el.textContent=String(Math.round(target*eased));
+    if(p<1)requestAnimationFrame(step); else el.textContent=String(target);
+  }
+  requestAnimationFrame(step);
 })();
 </script>
 
